@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import _ from "lodash";
+import AddTodo from "./AddTodo";
+import DisplayTodo from "./DisplayTodo";
 
-const TodoList = () => {
+const Home = () => {
   //khai bao state
   const [todo, setTodo] = useState("");
   const [listTodo, setListTodo] = useState([
@@ -10,19 +12,25 @@ const TodoList = () => {
     { id: "todo3", name: "Reading book" },
   ]);
 
-  //Hàm tạo ra ID random
+  //Hàm tạo ra ID random cho gía trị mới thêm ở input
   const randomIntFromInterval = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
 
   //hàm Click submit: ấn vào là thêm giá trị mới nhập
   const handleClickBtn = () => {
+    //neu rong ma submit thi alert
+    if (!todo) {
+      alert("Todo is name not empty");
+      return;
+    }
     let todoId = randomIntFromInterval(4, 99999999999999); //gắn todoId=ID random ra ở hàm trên
     let todoItem = {
       id: `todo${todoId}`, //nối chuỗi Id cho giá trị mới nhập
       name: todo,
     };
     setListTodo([...listTodo, todoItem]); //...listTodo: copy lại 3 ptu cũ , todoItem cập nhật lại giá trị mới: !spread operator
+    setTodo(""); //sau khi them thi input=rong
   };
 
   //hàm khi click vào giá trị là nó sẽ xóa
@@ -32,35 +40,22 @@ const TodoList = () => {
     setListTodo(currentTodoList);
   };
 
+  const myInfor = { age: 10, name: "truong" };
+  //prop,state:object (key:value)
   return (
     <div>
-      <label>Todo's Name</label>
-      <input
-        value={todo}
-        type="text"
-        onChange={(event) => setTodo(event.target.value)}
+      <AddTodo todo={todo} setTodo={setTodo} handleClickBtn={handleClickBtn} />
+
+      <DisplayTodo
+        childData={listTodo} //x=y => x <-y Tao key=Data
+        name={"Eric"}
+        myInfor={myInfor}
+        deletedTodoInParent={handleDeletedTodo} //tạo key deletedTodoInParent = hàm xóa để truyền qua lớp con
       />
-      <button type="submit" onClick={() => handleClickBtn()}>
-        Submit
-      </button>
-      <br />
-      <br />
-      <div>--------List todo: ---------------</div>
-      {listTodo.map((item, index) => {
-        return (
-          <div
-            id={item.id}
-            key={item.id}
-            onClick={() => handleDeletedTodo(item.id)}
-          >
-            {item.name}
-          </div> //thẻ div này là nơi hiển thị giá trị mới submit
-        );
-      })}
     </div>
   );
 };
-// class TodoList extends React.Component {
+// class Home extends React.Component {
 //   //khai bao state
 //   state = {
 //     name: "",
@@ -80,4 +75,4 @@ const TodoList = () => {
 //     );
 //   }
 // }
-export default TodoList;
+export default Home;

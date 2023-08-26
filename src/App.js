@@ -1,16 +1,19 @@
 import logo from "./logo.svg";
 import "./App.css";
-import TodoList from "./components/TodoList"; //import tu ben kia qua
+import Home from "./components/Home"; //import tu ben kia qua
+import AddNewProduct from "./components/AddNewProduct";
 
 // function App() {
 const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <header className="App-header content-left">
+        <div style={{ textAlign: "center" }}>
+          <img src={logo} className="App-logo" alt="logo" />
+        </div>
         <p>Hello world with truong</p>
 
-        <TodoList />
+        <Home />
 
         <a
           className="App-link"
@@ -21,6 +24,9 @@ const App = () => {
           Learn React
         </a>
       </header>
+      <div className="content-right">
+        <AddNewProduct />
+      </div>
     </div>
   );
 };
