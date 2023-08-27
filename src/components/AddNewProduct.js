@@ -16,13 +16,33 @@ const AddNewProduct = () => {
       size,
       color,
     };
-    console.log("check data", object);
+    // console.log("check data json", object, JSON.stringify(object));
+
+    let productList = localStorage.getItem("productList");
+    if (productList) {
+      let arr = JSON.parse(productList);
+      arr.push(object);
+      localStorage.setItem("productList", JSON.stringify(arr));
+    } else {
+      localStorage.setItem("productList", JSON.stringify([object]));
+    }
+
+    //add la clear input va chay lai ham return
+    setName("");
+    setPrice(0);
+    setSize(0);
+    setColor("");
   };
 
   //hiện <=> ẩn
   const handleHideShow = (status) => {
     setIsShowDetail(status); //show form
   };
+
+  localStorage.setItem("name", "Eric");
+  const name1 = localStorage.getItem("name");
+  console.log("check name =", name1);
+
   return (
     <div>
       {isShowDetail === true && (
@@ -68,18 +88,17 @@ const AddNewProduct = () => {
           </div>
         </fieldset>
       )}
-      {/* {isShowDetail === true && (
-        <div onClick={() => handleHideShow(false)}>Hide this form</div>
-      )}
-      {isShowDetail === false && (
-        <div onClick={() => handleHideShow(true)}>Show form</div>
-      )} */}
 
       {isShowDetail === true ? (
         <div onClick={() => handleHideShow(false)}>Hide this form</div>
       ) : (
         <div onClick={() => handleHideShow(true)}>Show form</div>
       )}
+
+      <div>
+        List product:
+        <div>{localStorage.getItem("productList")}</div>
+      </div>
     </div>
   );
 };
