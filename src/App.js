@@ -2,6 +2,8 @@ import logo from "./logo.svg";
 import "./App.scss";
 import Home from "./components/Home"; //import tu ben kia qua
 import AddNewProduct from "./components/AddNewProduct";
+import Product from "./components/Products/Product.js";
+import "react-image-lightbox/style.css";
 
 // function App() {
 const App = () => {
@@ -14,7 +16,6 @@ const App = () => {
         <p>Hello world with truong</p>
 
         <Home />
-
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -26,6 +27,8 @@ const App = () => {
       </header>
       <div className="content-right">
         <AddNewProduct />
+        <hr />
+        <Product />
       </div>
     </div>
   );
