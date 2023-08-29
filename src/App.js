@@ -5,7 +5,6 @@ import AddNewProduct from "./components/AddNewProduct";
 import Product from "./components/Products/Product.js";
 import "react-image-lightbox/style.css";
 import Nav from "./components/Navigation/Nav";
-
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // function App() {
@@ -43,5 +42,4 @@ const App = () => {
     </Router>
   );
 };
-
 export default App;
