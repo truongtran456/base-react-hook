@@ -4,33 +4,43 @@ import Home from "./components/Home"; //import tu ben kia qua
 import AddNewProduct from "./components/AddNewProduct";
 import Product from "./components/Products/Product.js";
 import "react-image-lightbox/style.css";
+import Nav from "./components/Navigation/Nav";
+
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 // function App() {
 const App = () => {
   return (
-    <div className="App">
-      <header className="App-header content-left">
-        <div style={{ textAlign: "center" }}>
-          <img src={logo} className="App-logo" alt="logo" />
-        </div>
-        <p>Hello world with truong</p>
-
-        <Home />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <div className="content-right">
-        <AddNewProduct />
-        <hr />
-        <Product />
-      </div>
-    </div>
+    <Router>
+      <Nav />
+      <Switch>
+        <Route path="/product">
+          <Product />
+        </Route>
+        <Route path="/weather">
+          <div>weather app</div>
+        </Route>
+        <Route path="/about">
+          <div>I'm Truong</div>
+        </Route>
+        <Route path="/">
+          <div className="App">
+            <header className="App-header content-left">
+              <div style={{ textAlign: "center" }}>
+                <img src={logo} className="App-logo" alt="logo" />
+              </div>
+              <p>Hello world with truong</p>
+              <Home />
+            </header>
+            <div className="content-right">
+              <AddNewProduct />
+              <hr />
+              <Product />
+            </div>
+          </div>
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 

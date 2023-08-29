@@ -25,7 +25,7 @@ const Product = () => {
       <div className="product-container">
         <div className="content-left">
           <div className="img-up">
-            <img src={currentUpImg} onClick={() => setIsOpen(true)} />
+            <img src={currentUpImg} onClick={() => handleClickPreviewImg()} />
           </div>
           <div className="img-down">
             <div className="img-small">
@@ -82,7 +82,7 @@ const Product = () => {
           onMoveNextRequest={() =>
             setPhotoIndex((photoIndex + 1) % images.length)
           }
-          // animationDisabled={true} //khoong nhay hinh`
+          // animationDisabled={true} //khong nhay man hinh`
           animationDuration={500} //khoan thoi gian xay ra
         />
       )}
