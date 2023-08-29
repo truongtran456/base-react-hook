@@ -1,5 +1,5 @@
 import "./Nav.scss";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const Nav = () => {
   return (
     <div class="topnav">
