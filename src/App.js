@@ -12,17 +12,9 @@ const App = () => {
   return (
     <Router>
       <Nav />
+      {/* switch thực hiện từ trên xuống */}
       <Switch>
-        <Route path="/product">
-          <Product />
-        </Route>
-        <Route path="/weather">
-          <div>weather app</div>
-        </Route>
-        <Route path="/about">
-          <div>I'm Truong</div>
-        </Route>
-        <Route path="/">
+        <Route path="/" exact={true}>
           <div className="App">
             <header className="App-header content-left">
               <div style={{ textAlign: "center" }}>
@@ -37,6 +29,18 @@ const App = () => {
               <Product />
             </div>
           </div>
+        </Route>
+        <Route path="/product">
+          <Product />
+        </Route>
+        <Route path="/weather">
+          <div>weather app</div>
+        </Route>
+        <Route path="/about">
+          <div>I'm Truong</div>
+        </Route>
+        <Route path="*">
+          <div>404 Not Found</div>
         </Route>
       </Switch>
     </Router>
