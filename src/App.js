@@ -12,7 +12,7 @@ const App = () => {
   return (
     <Router>
       <Nav />
-      {/* switch thực hiện từ trên xuống */}
+      {/* switch thực hiện theo thứ từ trên xuống dưới */}
       <Switch>
         <Route path="/" exact={true}>
           <div className="App">

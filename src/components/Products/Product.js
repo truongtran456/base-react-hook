@@ -70,6 +70,7 @@ const Product = () => {
         </div>
       </div>
 
+      {/* ấn vào nó mở lên và chuyển tiếp sản phẩm */}
       {isOpen && (
         <Lightbox
           mainSrc={images[photoIndex]}
@@ -82,7 +83,7 @@ const Product = () => {
           onMoveNextRequest={() =>
             setPhotoIndex((photoIndex + 1) % images.length)
           }
-          // animationDisabled={true} //khong nhay man hinh`
+          // animationDisabled={true} //ấn chuyển ảnh không nhảy màn hình
           animationDuration={500} //khoan thoi gian xay ra
         />
       )}
