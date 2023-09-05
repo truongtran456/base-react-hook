@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const baseURL = "https://dog.ceo/api/breeds/image/random";
+const baseURL = "https://dog.ceo/api/breeds/image/random"; //link api
 
 const Weather = () => {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState(""); //khai bao state
   useEffect(() => {
     axios.get(baseURL).then((response) => {
       setMessage(response.data.message);
     });
   }, []);
-  if (!message) return null;
+  if (!message) return null; //neu kh co data thi null
   return <div>weather okokokoko : message= {message}</div>;
 };
 

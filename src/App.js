@@ -6,7 +6,8 @@ import Product from "./components/Products/Product.js";
 import "react-image-lightbox/style.css";
 import Nav from "./components/Navigation/Nav";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Weather from "./Weather/Weather";
+import Weather from "./components/Weather/Weather";
+import OTP from "./components/OTP/OTP";
 
 // function App() {
 const App = () => {
@@ -36,6 +37,9 @@ const App = () => {
         </Route>
         <Route path="/weather">
           <Weather />
+        </Route>
+        <Route path="/otp">
+          <OTP />
         </Route>
         <Route path="/about">
           <div>I'm Truong</div>
