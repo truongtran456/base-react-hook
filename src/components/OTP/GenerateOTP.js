@@ -10,7 +10,7 @@ const GenerateOTP = () => {
   return (
     <div className="generate-otp-container">
       <button onClick={() => handleClickBtn()}>Generate OTP</button>
-      <div>Your OTP: {orgOTP}</div>
+      <div className="title">Your OTP: {orgOTP}</div>
     </div>
   );
 };

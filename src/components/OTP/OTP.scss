@@ -3,4 +3,53 @@
   border: 1px solid red;
   padding: 15px; //cach ra
   margin: 0 auto; //vao giua
+
+  .input-otp-container {
+    border: 1px solid grey;
+    display: flex; //hang ngang
+    flex-direction: column; //hang doc
+    justify-content: center;
+    align-items: center; //flex vao giua
+    gap: 15px; //khoang cach giua cac component
+    width: 600px;
+    margin: 0 auto; //vao giua
+    padding: 10px 0;
+    border-radius: 5px; //vien tron xung quanh
+
+    .input-customize {
+      width: 3rem !important;
+      height: 3rem;
+      margin: 0 1rem;
+      font-size: 2rem;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .action {
+      button {
+        height: 28px;
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .generate-otp-container {
+    //
+    text-align: center;
+    margin: 20px 0;
+
+    button {
+      height: 20px;
+    }
+    .title {
+      padding-top: 15px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
 }
