@@ -9,7 +9,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Weather from "./components/Weather/Weather";
 import OTP from "./components/OTP/OTP";
 
-
 // function App() {
 const App = () => {
   return (
@@ -54,5 +53,4 @@ const App = () => {
 };
 
 export default App;
-
 
