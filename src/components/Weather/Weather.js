@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Search from "./Search";
+import "./Weather.scss";
+import _ from "lodash";
 
 const baseURL = "https://dog.ceo/api/breeds/image/random"; //link api
 
@@ -11,7 +14,11 @@ const Weather = () => {
     });
   }, []);
   if (!message) return null; //neu kh co data thi null
-  return <div>weather okokokoko : message= {message}</div>;
+  return (
+    <div className="weather-app-container">
+      <Search />
+    </div>
+  );
 };
 
 // class Weather extends React.Component {

@@ -7,9 +7,10 @@ const InputOTP = (props) => {
   //otp bien tu dat
   const handleChange = (otp) => {
     setOtp(otp);
-    props.setUserOTPParent(otp); //truyền otp vào biến setUserOTPParent này ở class cha OTP.js
+    props.setUserOTPParent(otp); //truyền otp vào setUserOTPParent này ở class cha OTP.js xem co === value tu generateOTP khong
   };
 
+  //ham ktra khi an nut confirm => dung hay sai
   const handleConfirmOTP = () => {
     props.handleSubmitOTP(); //goi qua ham o class cha
   };

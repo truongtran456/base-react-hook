@@ -6,7 +6,7 @@ const GenerateOTP = (props) => {
   const handleClickBtn = () => {
     const otp = Math.floor(100000 + Math.random() * 900000);
     setOrgOTP(otp);
-    props.setOrgOTPParent(otp); //truyền otp vào biến SET state này ở class cha OTP.js
+    props.setOrgOTPParent(otp); //truyền otp vào biến SET state này ở class cha OTP.js de ktra con === input khong
   };
   return (
     <div className="generate-otp-container">
