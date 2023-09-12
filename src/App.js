@@ -8,6 +8,7 @@ import Nav from "./components/Navigation/Nav";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Weather from "./components/Weather/Weather";
 import OTP from "./components/OTP/OTP";
+import WeatherByLocation from "./components/Weather/WeatherByLocation";
 
 // function App() {
 const App = () => {
@@ -35,7 +36,7 @@ const App = () => {
         <Route path="/product">
           <Product />
         </Route>
-        <Route path="/weather">
+        <Route path="/weather" exact>
           <Weather />
         </Route>
         <Route path="/otp">
@@ -44,8 +45,11 @@ const App = () => {
         <Route path="/about">
           <div>I'm Truong</div>
         </Route>
+        <Route path="/weather/detail/:woeid">
+          <div>weather detail</div>
+        </Route>
         <Route path="*">
-          <div>404 Not Found</div>
+          <WeatherByLocation />
         </Route>
       </Switch>
     </Router>
@@ -53,4 +57,3 @@ const App = () => {
 };
 
 export default App;
-

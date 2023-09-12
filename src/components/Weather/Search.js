@@ -41,7 +41,7 @@ const Search = () => {
           type="text"
           placeholder="Search ..."
           value={keyword}
-          onChange={(event) => setKeyword(event.target.value)} //lay gia tri cua input
+          onChange={(event) => setKeyword(event.target.value)} //lay gia tri cua input search
         />
         <button onClick={() => handleSearchBtn()}>Search</button>
       </div>
