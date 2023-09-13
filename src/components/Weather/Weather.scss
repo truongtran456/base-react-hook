@@ -11,15 +11,20 @@
         width: 200px;
         padding: 0 5px; //left & right
       }
+    }
+    .result-container {
+      display: flex;
+      flex-direction: row; //hang ngang
+      gap: 15px;
+      justify-content: space-between; //
+      align-items: center; //can giua
+      flex-wrap: wrap; //tu dong xuong dong
+      padding: 15px;
 
-      .result-container {
-        display: flex;
-        flex-direction: row; //hang ngang
-        gap: 15px;
-        justify-content: space-between; //
-        align-items: center; //can giua
-        flex-wrap: wrap; //tu dong xuong dong
-        padding: 15px;
+      .woeid {
+        span {
+          cursor: pointer;
+        }
       }
     }
   }

@@ -9,6 +9,7 @@
     "axios": "0.24.0",
     "eslint-plugin-react-hooks": "^5.0.0-canary-3808b01b3-20230830",
     "lodash": "4.17.21",
+    "moment": "2.29.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-image-lightbox": "5.1.4",

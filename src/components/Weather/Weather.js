@@ -46,7 +46,7 @@ const Weather = () => {
 //   //   async componentDidMount() {
 //   //     let data = await axios({
 //   //       method: "post",
-//   //       url: "https://reacthook-hoidanit-backend.herokuapp.com/get-data-by-url",
+//   //       url: "http://localhost:8080/get-data-by-url",
 //   //       data: { url: "link api" },
 //   //     });
 //   //     console.log(data);

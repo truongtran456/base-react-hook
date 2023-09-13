@@ -46,7 +46,7 @@ const App = () => {
           <div>I'm Truong</div>
         </Route>
         <Route path="/weather/detail/:woeid">
-          <div>weather detail</div>
+          <WeatherByLocation />
         </Route>
         <Route path="*">
           <WeatherByLocation />
