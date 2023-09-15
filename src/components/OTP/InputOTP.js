@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import OtpInput from "react-otp-input";
 import CountDown from "./CountDown";
+import CountdownAnimation from "./CountdownAnimation";
 
 const InputOTP = (props) => {
+  const childRef = useRef();
   const [otp, setOtp] = useState("");
   //otp bien tu dat
   const handleChange = (otp) => {
@@ -14,6 +16,11 @@ const InputOTP = (props) => {
   const handleConfirmOTP = () => {
     props.handleSubmitOTP(); //goi qua ham o class cha
   };
+  //clear
+  const handleClearBtn = () => {
+    childRef.current.restTimer();
+  };
+
   return (
     <div className="input-otp-container">
       <div className="title">Enter verification code</div>
@@ -25,10 +32,20 @@ const InputOTP = (props) => {
         inputStyle={"input-customize"} //css mấy ô input
       />
       <div className="timer">
-        <CountDown setIsDisableBtn={props.setIsDisableBtn} />
+        {/* <CountDown setIsDisableBtn={props.setIsDisableBtn} /> */}
+        <CountdownAnimation
+          setIsDisableBtn={props.setIsDisableBtn}
+          ref={childRef}
+        />
       </div>
       <div className="action">
-        <button className="clear">Clear</button>
+        <button
+          className="clear"
+          onClick={() => handleClearBtn()}
+          disabled={!props.isDisableBtn} //kh cho an clear khi dang chay
+        >
+          Clear
+        </button>
         <button
           className="confirm"
           disabled={props.isDisableBtn} //kh cho an confirm khi endtime

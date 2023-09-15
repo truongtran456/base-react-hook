@@ -3,7 +3,7 @@
   padding: 40px;
   font-size: 14px;
   background-color: hsl(220, 13%, 18%);
-  height: calc(100vh - 80px);
+  // height: calc(100vh - 80px);
   display: flex;
 
   .content-left {
@@ -68,7 +68,6 @@
   border: none;
   outline: none;
 }
-
 
 button {
   cursor: pointer;
